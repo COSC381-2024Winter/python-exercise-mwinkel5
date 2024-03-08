@@ -1,4 +1,10 @@
 class Movies:
+
+    def print_movies(self):
+        for i in range(len(self._movies)):
+            print(i, "\t", self._movies[i]['name'])
+        print()
+
     def __init__(self, movies_file):
         self._movies = []
 
