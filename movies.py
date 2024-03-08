@@ -9,7 +9,7 @@ class Movies:
         print()
         total_results = 0
         for i in range(len(self._movies)):
-            if search_string in self._movies[i]['name']:
+            if search_string in self._movies[i]['name'].lower():
                 print(self._movies[i]['name'])
                 total_results += 1
         if total_results == 0:
