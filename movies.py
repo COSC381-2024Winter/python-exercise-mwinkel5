@@ -5,6 +5,18 @@ class Movies:
             print(i, "\t", self._movies[i]['name'])
         print()
 
+    def search_names(self, search_string):
+        print()
+        total_results = 0
+        for i in range(len(self._movies)):
+            if search_string in self._movies[i]['name']:
+                print(self._movies[i]['name'])
+                total_results += 1
+        if total_results == 0:
+            print(f"Sorry, no movies found with the query: '{search_string}'")
+        print()
+        
+
     def __init__(self, movies_file):
         self._movies = []
 
