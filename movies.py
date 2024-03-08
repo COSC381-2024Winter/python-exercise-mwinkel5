@@ -16,6 +16,21 @@ class Movies:
             print(f"Sorry, no movies found with the query: '{search_string}'")
         print()
         
+    def search_casts(self, search_string):
+        print()
+        total_results = 0
+        for movie in self._movies:
+            if search_string in "".join(movie['cast']).lower():
+                print(movie['name'])
+                total_results += 1
+                temp = []
+                for actor in movie['cast']:
+                    if search_string in actor.lower():
+                        temp.append(actor)
+                print(temp)
+        if total_results == 0:
+            print(f"Sorry, no movies found with a cast member named: '{search_string}'")
+        print()
 
     def __init__(self, movies_file):
         self._movies = []
